@@ -3,346 +3,85 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>{{ config('app.name', 'Laravel') }} | Feature Flight</title>
-
+        <title>{{ config('app.name', 'Laravel') }} | Launch Observatory</title>
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="bg-[var(--page)] text-[var(--ink)]">
-        <div class="relative overflow-hidden">
-            <div class="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top_left,rgba(255,143,92,0.34),transparent_42%),radial-gradient(circle_at_85%_10%,rgba(38,110,255,0.18),transparent_30%)]"></div>
-            <div class="pointer-events-none absolute left-[-10rem] top-[20rem] h-[24rem] w-[24rem] rounded-full bg-[rgba(255,195,123,0.28)] blur-3xl"></div>
-            <div class="pointer-events-none absolute right-[-8rem] top-[38rem] h-[20rem] w-[20rem] rounded-full bg-[rgba(64,145,255,0.16)] blur-3xl"></div>
+    <body class="min-h-screen bg-[#07100f] font-sans text-[#e9f0dc] antialiased">
+        <div class="min-h-screen overflow-hidden bg-[radial-gradient(circle_at_48%_-10%,rgba(154,208,95,0.17),transparent_32%),linear-gradient(120deg,#07100f_0%,#0b1714_55%,#10140e_100%)]">
+            <div class="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(226,247,204,0.025)_1px,transparent_1px),linear-gradient(90deg,rgba(226,247,204,0.025)_1px,transparent_1px)] bg-[size:44px_44px] [mask-image:linear-gradient(to_bottom,black,transparent_82%)]"></div>
 
-            <main class="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-12 px-5 py-6 sm:px-8 lg:px-10 lg:py-8">
-                <header class="flex flex-col gap-5 rounded-[2rem] border border-black/8 bg-white/72 px-5 py-4 shadow-[0_20px_60px_rgba(43,33,24,0.08)] backdrop-blur sm:px-6 lg:flex-row lg:items-center lg:justify-between">
-                    <div class="flex flex-col gap-3">
-                        <div class="flex items-center gap-3">
-                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-sm font-semibold tracking-[0.2em] text-white">
-                                FF
-                            </span>
-                            <div>
-                                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Feature Flight</p>
-                                <p class="text-sm text-[var(--muted)]">Laravel Pennant release choreography</p>
-                            </div>
+            <div class="relative mx-auto flex min-h-screen max-w-[1540px] flex-col lg:flex-row">
+                <aside class="flex shrink-0 flex-col border-b border-white/10 bg-black/10 px-5 py-5 lg:min-h-screen lg:w-24 lg:border-b-0 lg:border-r lg:px-4 lg:py-7">
+                    <div class="flex items-center justify-between lg:flex-col lg:gap-12">
+                        <a href="{{ route('showcase') }}" class="group flex items-center gap-3 lg:flex-col">
+                            <span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-[#c6f36b] text-sm font-black tracking-[-0.12em] text-[#10200f] shadow-[0_0_34px_rgba(198,243,107,0.18)] transition group-hover:rotate-6">PX</span>
+                            <span class="hidden text-[0.55rem] font-bold uppercase tracking-[0.3em] text-white/45 lg:block">Pennant</span>
+                        </a>
+                        <div class="flex items-center gap-2 text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/45 lg:flex-col">
+                            <span class="h-2 w-2 rounded-full bg-[#c6f36b] shadow-[0_0_12px_#c6f36b]"></span>
+                            <span class="lg:[writing-mode:vertical-rl]">Live system</span>
                         </div>
-                        <p class="max-w-2xl text-sm leading-7 text-[var(--muted)]">
-                            A live showcase for audience-scoped flags, global release controls, rich values, and recovery behavior.
-                        </p>
                     </div>
+                    <nav class="mt-7 hidden flex-1 flex-col items-center gap-7 lg:flex">
+                        <span class="flex h-10 w-10 items-center justify-center rounded-xl border border-[#c6f36b]/35 bg-[#c6f36b]/10 text-[#c6f36b]" title="Observatory"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 19V9m5 10V5m6 14v-7m5 7V3" stroke-linecap="round"/></svg></span>
+                        <span class="flex h-10 w-10 items-center justify-center rounded-xl text-white/35" title="Signals"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 18h16M6 15l3-4 3 2 5-7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span class="flex h-10 w-10 items-center justify-center rounded-xl text-white/35" title="Scopes"><svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/></svg></span>
+                    </nav>
+                    <div class="hidden flex-col items-center gap-3 lg:flex"><span class="h-px w-8 bg-white/10"></span><span class="text-[0.55rem] font-bold uppercase tracking-[0.3em] text-white/25 [writing-mode:vertical-rl]">v1.26</span></div>
+                </aside>
 
-                    <div class="grid gap-3 sm:grid-cols-3 lg:min-w-[32rem]">
-                        <article class="rounded-[1.4rem] bg-[var(--panel)] px-4 py-4">
-                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Audience</p>
-                            <p class="mt-3 text-lg font-semibold">{{ $audience->label() }}</p>
-                            <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{{ $audience->description() }}</p>
-                        </article>
-                        <article class="rounded-[1.4rem] bg-[var(--panel)] px-4 py-4">
-                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Theme</p>
-                            <p class="mt-3 text-lg font-semibold">{{ $showcaseTheme->label() }}</p>
-                            <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{{ $showcaseTheme->description() }}</p>
-                        </article>
-                        <article class="rounded-[1.4rem] bg-[var(--panel)] px-4 py-4">
-                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Release</p>
-                            <p class="mt-3 text-lg font-semibold">{{ $launchStage->label() }}</p>
-                            <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{{ $launchStage->description() }}</p>
-                        </article>
+                <main class="min-w-0 flex-1 px-5 py-6 sm:px-8 lg:px-10 lg:py-8">
+                    <header class="flex flex-col gap-6 border-b border-white/10 pb-7 sm:flex-row sm:items-end sm:justify-between">
+                        <div>
+                            <div class="flex items-center gap-3 text-[0.65rem] font-bold uppercase tracking-[0.3em] text-[#c6f36b]"><span>01 / Observatory</span><span class="h-px w-8 bg-[#c6f36b]/50"></span><span class="text-white/35">Feature flight</span></div>
+                            <h1 class="mt-5 max-w-3xl text-4xl font-semibold leading-[0.98] tracking-[-0.06em] text-white sm:text-6xl lg:text-7xl">Ship the code.<br><span class="text-[#c6f36b]">Control the moment.</span></h1>
+                        </div>
+                        <div class="flex items-center gap-4 sm:pb-1"><div class="text-right"><p class="text-[0.6rem] font-bold uppercase tracking-[0.28em] text-white/35">Last sync</p><p class="mt-1 font-mono text-sm text-white/75">{{ now()->format('H:i:s') }} UTC</p></div><span class="flex h-10 w-10 items-center justify-center rounded-full border border-[#c6f36b]/25 bg-[#c6f36b]/10"><span class="h-2 w-2 rounded-full bg-[#c6f36b] shadow-[0_0_14px_#c6f36b]"></span></span></div>
+                    </header>
+
+                    @if (session('status'))
+                        <div class="mt-6 flex items-center gap-3 border border-[#c6f36b]/25 bg-[#c6f36b]/10 px-4 py-3 text-sm text-[#dff7b2]"><span class="h-2 w-2 rounded-full bg-[#c6f36b]"></span>{{ session('status') }}</div>
+                    @endif
+
+                    <div class="mt-8 grid gap-8 xl:grid-cols-[minmax(0,1fr)_19rem]">
+                        <div class="min-w-0">
+                            <section class="relative overflow-hidden border border-white/12 bg-[#101d19] p-5 sm:p-7 lg:p-9">
+                                <div class="absolute right-0 top-0 h-64 w-64 rounded-full bg-[#c6f36b]/10 blur-3xl"></div>
+                                <div class="relative flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between">
+                                    <div class="max-w-2xl">
+                                        <div class="flex flex-wrap items-center gap-3"><span class="border border-white/15 px-3 py-1.5 text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/55">Resolved experience</span><span @class(['px-3 py-1.5 text-[0.6rem] font-bold uppercase tracking-[0.25em]', 'bg-[#c6f36b] text-[#10200f]' => ! $emergencyBrake, 'bg-[#ff735f] text-[#260b08]' => $emergencyBrake])>{{ $emergencyBrake ? 'Brake engaged' : 'Nominal' }}</span></div>
+                                        <h2 class="mt-8 text-3xl font-semibold leading-[1.05] tracking-[-0.045em] text-white sm:text-5xl">{{ $priorityNavigation ? 'Priority navigation is live.' : 'Priority navigation is held back.' }}</h2>
+                                        <p class="mt-5 max-w-xl text-sm leading-7 text-white/55 sm:text-base">{{ $priorityNavigation ? 'The selected scope has crossed the threshold and is seeing the new experience.' : 'The selected scope is protected by a conservative rollout while the release earns more signal.' }}</p>
+                                    </div>
+                                    <div class="relative shrink-0 border-l border-white/10 pl-5 lg:w-40"><p class="text-[0.6rem] font-bold uppercase tracking-[0.28em] text-white/35">Active wave</p><p class="mt-2 text-4xl font-semibold tracking-[-0.06em] text-[#c6f36b]">{{ $launchStage->exposure() }}</p><p class="mt-2 text-xs leading-5 text-white/45">{{ $launchStage->monitorFocus() }}</p></div>
+                                </div>
+                                <div class="relative mt-12 border-t border-white/10 pt-5"><div class="flex items-center justify-between text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/35"><span>Release confidence</span><span>{{ $launchStage->label() }}</span></div><div class="mt-4 grid grid-cols-12 gap-1.5">@for ($index = 1; $index <= 12; $index++)<span @class(['h-2', 'bg-[#c6f36b]' => $index <= match ($launchStage->value) { 'steady' => 3, 'canary' => 7, 'wide' => 12 }, 'bg-white/10' => $index > match ($launchStage->value) { 'steady' => 3, 'canary' => 7, 'wide' => 12 }])></span>@endfor</div></div>
+                            </section>
+
+                            <section class="mt-8"><div class="flex items-end justify-between gap-4"><div><p class="text-[0.65rem] font-bold uppercase tracking-[0.3em] text-white/35">Scope matrix</p><h2 class="mt-2 text-2xl font-semibold tracking-[-0.04em] text-white">Who sees what?</h2></div><p class="hidden text-right text-xs leading-5 text-white/35 sm:block">Select a scope<br>to inspect the flight.</p></div>
+                                <div class="mt-5 divide-y divide-white/10 border-y border-white/10">
+                                    @foreach ($audiences as $candidate)
+                                        <a href="{{ route('showcase', ['audience' => $candidate->value]) }}" class="group grid gap-4 py-5 transition hover:bg-white/[0.025] sm:grid-cols-[minmax(10rem,0.8fr)_minmax(0,1.4fr)_auto] sm:items-center sm:px-4"><div class="flex items-center gap-3"><span @class(['h-2 w-2 rounded-full', 'bg-[#c6f36b] shadow-[0_0_10px_#c6f36b]' => $candidate === $audience, 'bg-white/20' => $candidate !== $audience])></span><span class="font-semibold text-white">{{ $candidate->label() }}</span>@if ($candidate === $audience)<span class="text-[0.55rem] font-bold uppercase tracking-[0.2em] text-[#c6f36b]">Viewing</span>@endif</div><p class="text-sm leading-6 text-white/40">{{ $candidate->description() }}</p><span class="text-lg text-white/25 transition group-hover:translate-x-1 group-hover:text-[#c6f36b]">&rarr;</span></a>
+                                    @endforeach
+                                </div>
+                            </section>
+
+                            <section class="mt-8 grid gap-px border border-white/10 bg-white/10 sm:grid-cols-3"><div class="bg-[#0d1916] p-5"><p class="text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/35">Visual mode</p><p class="mt-3 text-lg font-semibold text-white">{{ $showcaseTheme->label() }}</p><p class="mt-2 text-xs leading-5 text-white/40">{{ $showcaseTheme->description() }}</p></div><div class="bg-[#0d1916] p-5"><p class="text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/35">Operator layer</p><p class="mt-3 text-lg font-semibold text-white">{{ $operatorConsole ? 'Visible' : 'Hidden' }}</p><p class="mt-2 text-xs leading-5 text-white/40">Global flag, shared across every scope.</p></div><div class="bg-[#0d1916] p-5"><p class="text-[0.6rem] font-bold uppercase tracking-[0.25em] text-white/35">Recovery path</p><p class="mt-3 text-lg font-semibold {{ $emergencyBrake ? 'text-[#ff735f]' : 'text-white' }}">{{ $emergencyBrake ? 'Intercepting' : 'Standing by' }}</p><p class="mt-2 text-xs leading-5 text-white/40">In-memory override, no history lost.</p></div></section>
+                        </div>
+
+                        <aside class="min-w-0 xl:sticky xl:top-8 xl:self-start">
+                            <div class="border border-white/12 bg-[#dce9c4] p-5 text-[#10200f] sm:p-6"><div class="flex items-start justify-between gap-4"><div><p class="text-[0.6rem] font-bold uppercase tracking-[0.28em] text-[#48603b]">Operator deck</p><h2 class="mt-3 text-2xl font-semibold tracking-[-0.05em]">Change the flight.</h2></div><span class="font-mono text-xs text-[#48603b]">LIVE</span></div>
+                                <div class="mt-8 space-y-8">
+                                    <form method="POST" action="{{ route('controls.update') }}">@csrf<input type="hidden" name="feature" value="launch_mode"><div class="flex items-baseline justify-between gap-3"><label class="text-sm font-semibold">Release wave</label><span class="font-mono text-xs text-[#48603b]">{{ $launchStage->exposure() }} exposed</span></div><div class="mt-3 grid gap-2">@foreach (\App\Enums\LaunchStage::cases() as $stage)<button type="submit" name="value" value="{{ $stage->value }}" @class(['flex items-center justify-between border px-3 py-3 text-left text-sm transition', 'border-[#10200f] bg-[#10200f] text-[#dff7b2]' => $launchStage === $stage, 'border-[#a9bc91] bg-transparent text-[#294224] hover:border-[#10200f]' => $launchStage !== $stage])><span class="font-semibold">{{ $stage->label() }}</span><span class="font-mono text-xs opacity-65">{{ $stage->exposure() }}</span></button>@endforeach</div></form>
+                                    <form method="POST" action="{{ route('controls.update') }}" class="border-t border-[#a9bc91] pt-6">@csrf<input type="hidden" name="feature" value="operator_console"><div class="flex items-center justify-between gap-3"><div><label class="text-sm font-semibold">Operator layer</label><p class="mt-1 text-xs text-[#48603b]">Reveal system detail</p></div><span class="font-mono text-xs text-[#48603b]">{{ $operatorConsole ? 'ON' : 'OFF' }}</span></div><div class="mt-3 grid grid-cols-2 gap-2"><button type="submit" name="state" value="on" class="bg-[#10200f] px-3 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-[#dff7b2]">Enable</button><button type="submit" name="state" value="off" class="border border-[#a9bc91] px-3 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-[#294224]">Disable</button></div></form>
+                                    <form method="POST" action="{{ route('controls.update') }}" class="border-t border-[#a9bc91] pt-6">@csrf<input type="hidden" name="feature" value="emergency_brake"><div class="flex items-center justify-between gap-3"><div><label class="text-sm font-semibold">Emergency brake</label><p class="mt-1 text-xs text-[#48603b]">Force recovery skin</p></div><span class="font-mono text-xs {{ $emergencyBrake ? 'text-[#c03f32]' : 'text-[#48603b]' }}">{{ $emergencyBrake ? 'ARMED' : 'IDLE' }}</span></div><div class="mt-3 grid grid-cols-2 gap-2"><button type="submit" name="state" value="on" class="bg-[#e35d4d] px-3 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-[#260b08]">Engage</button><button type="submit" name="state" value="off" class="border border-[#a9bc91] px-3 py-2.5 text-xs font-bold uppercase tracking-[0.15em] text-[#294224]">Release</button></div></form>
+                                </div>
+                            </div>
+                            <div class="mt-5 border border-white/10 bg-white/[0.035] p-5"><div class="flex items-center justify-between"><p class="text-[0.6rem] font-bold uppercase tracking-[0.28em] text-white/35">Current readout</p><span class="font-mono text-[0.65rem] text-[#c6f36b]">{{ $audience->value }}</span></div><dl class="mt-5 divide-y divide-white/10 text-sm"><div class="flex justify-between gap-4 py-3"><dt class="text-white/40">Priority nav</dt><dd class="font-medium text-white">{{ $priorityNavigation ? 'Enabled' : 'Disabled' }}</dd></div><div class="flex justify-between gap-4 py-3"><dt class="text-white/40">Theme</dt><dd class="font-medium text-white">{{ $showcaseTheme->label() }}</dd></div><div class="flex justify-between gap-4 py-3"><dt class="text-white/40">Release</dt><dd class="font-medium text-white">{{ $launchStage->label() }}</dd></div></dl></div>
+                        </aside>
                     </div>
-                </header>
-
-                @if (session('status'))
-                    <div class="rounded-[1.5rem] border border-[rgba(24,131,89,0.18)] bg-[rgba(240,255,247,0.94)] px-5 py-4 text-sm text-[var(--ink)] shadow-[0_15px_45px_rgba(32,94,67,0.08)]">
-                        {{ session('status') }}
-                    </div>
-                @endif
-
-                <section class="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_22rem]">
-                    <div class="space-y-8">
-                        <section class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(17rem,0.8fr)]">
-                            <article class="release-hero rounded-[2.4rem] p-6 sm:p-8 lg:p-10">
-                                <div class="flex flex-wrap items-center gap-3">
-                                    <span class="rounded-full bg-white/18 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-white/92">
-                                        Deployment is not release
-                                    </span>
-                                    <span @class([
-                                        'rounded-full px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em]',
-                                        'bg-[rgba(255,255,255,0.16)] text-white' => ! $emergencyBrake,
-                                        'bg-[rgba(54,12,8,0.28)] text-[rgba(255,236,231,1)]' => $emergencyBrake,
-                                    ])>
-                                        {{ $emergencyBrake ? 'Recovery Mode Active' : 'Healthy Rollout' }}
-                                    </span>
-                                </div>
-
-                                <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_14rem]">
-                                    <div class="space-y-6">
-                                        <h1 class="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[4.5rem]">
-                                            {{ $priorityNavigation ? 'This audience is already inside the new experience.' : 'This audience is still watching the rollout from the safe side.' }}
-                                        </h1>
-                                        <p class="max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
-                                            Pennant is resolving the experience in real time. Scoped flags shape the surface for the selected audience, while global controls can widen the release, reveal the operator layer, or trigger a recovery override instantly.
-                                        </p>
-                                    </div>
-
-                                    <div class="flex flex-col justify-between rounded-[1.8rem] bg-[rgba(255,255,255,0.11)] p-5 text-white/94 backdrop-blur">
-                                        <div>
-                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/66">Wave size</p>
-                                            <p class="mt-4 text-5xl font-semibold">{{ $launchStage->exposure() }}</p>
-                                        </div>
-                                        <div class="space-y-3">
-                                            <div>
-                                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/66">Watch closely</p>
-                                                <p class="mt-2 text-base font-medium">{{ $launchStage->monitorFocus() }}</p>
-                                            </div>
-                                            <div>
-                                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/66">Storage</p>
-                                                <p class="mt-2 text-base font-medium">Pennant database store</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-
-                            <article class="rounded-[2rem] border border-black/8 bg-white/80 p-6 shadow-[0_20px_60px_rgba(43,33,24,0.08)]">
-                                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Resolved surface</p>
-                                <div class="mt-5 space-y-5">
-                                    <div class="rounded-[1.6rem] bg-[var(--panel)] p-5">
-                                        <p class="text-sm font-medium text-[var(--muted)]">Visual mode</p>
-                                        <h2 class="mt-3 text-2xl font-semibold">{{ $showcaseTheme->label() }}</h2>
-                                        <p class="mt-3 text-sm leading-7 text-[var(--muted)]">{{ $showcaseTheme->description() }}</p>
-                                    </div>
-                                    <div class="grid gap-3">
-                                        <div class="rounded-[1.4rem] border border-black/8 bg-white px-4 py-4">
-                                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Scoped feature</p>
-                                            <p class="mt-2 text-lg font-semibold">{{ $priorityNavigation ? 'Priority navigation on' : 'Priority navigation off' }}</p>
-                                        </div>
-                                        <div class="rounded-[1.4rem] border border-black/8 bg-white px-4 py-4">
-                                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Operator layer</p>
-                                            <p class="mt-2 text-lg font-semibold">{{ $operatorConsole ? 'Visible' : 'Hidden' }}</p>
-                                        </div>
-                                        <div class="rounded-[1.4rem] border border-black/8 bg-white px-4 py-4">
-                                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Recovery path</p>
-                                            <p class="mt-2 text-lg font-semibold">{{ $emergencyBrake ? 'Intercepting in memory' : 'Standing by' }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </article>
-                        </section>
-
-                        <section class="rounded-[2.2rem] border border-black/8 bg-white/78 p-6 shadow-[0_20px_60px_rgba(43,33,24,0.08)] sm:p-8">
-                            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
-                                <div>
-                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Audience tracks</p>
-                                    <h2 class="mt-3 text-3xl font-semibold tracking-tight">Swap the viewer and watch the release posture change.</h2>
-                                </div>
-                                <p class="max-w-xl text-sm leading-7 text-[var(--muted)]">
-                                    The selected audience acts as the Pennant scope. Each card below resolves the same feature set through a different release lens.
-                                </p>
-                            </div>
-
-                            <div class="mt-8 grid gap-4 lg:grid-cols-3">
-                                @foreach ($audiences as $candidate)
-                                    <a
-                                        href="{{ route('showcase', ['audience' => $candidate->value]) }}"
-                                        @class([
-                                            'group rounded-[1.9rem] border p-5 transition duration-300',
-                                            'border-black/8 bg-[var(--panel)] hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(43,33,24,0.08)]' => $candidate !== $audience,
-                                            'border-[rgba(216,101,55,0.28)] bg-[var(--accent-soft)] shadow-[0_24px_55px_rgba(191,98,59,0.14)]' => $candidate === $audience,
-                                        ])
-                                    >
-                                        <div class="flex items-center justify-between gap-4">
-                                            <p class="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-[var(--muted)]">Track</p>
-                                            <span @class([
-                                                'rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
-                                                'bg-black/6 text-[var(--muted)]' => $candidate !== $audience,
-                                                'bg-[var(--ink)] text-white' => $candidate === $audience,
-                                            ])>
-                                                {{ $candidate === $audience ? 'Active' : 'Preview' }}
-                                            </span>
-                                        </div>
-                                        <h3 class="mt-6 text-2xl font-semibold tracking-tight">{{ $candidate->label() }}</h3>
-                                        <p class="mt-3 text-sm leading-7 text-[var(--muted)]">{{ $candidate->description() }}</p>
-                                        <div class="mt-8 flex items-end justify-between gap-4">
-                                            <div>
-                                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-[var(--muted)]">Expected surface</p>
-                                                <p class="mt-2 text-lg font-semibold">
-                                                    @if ($candidate->value === 'public')
-                                                        Conservative
-                                                    @elseif ($candidate->value === 'beta')
-                                                        Experimental
-                                                    @else
-                                                        Full access
-                                                    @endif
-                                                </p>
-                                            </div>
-                                            <span class="text-2xl transition group-hover:translate-x-1">&rarr;</span>
-                                        </div>
-                                    </a>
-                                @endforeach
-                            </div>
-                        </section>
-
-                        <section class="rounded-[2.2rem] border border-black/8 bg-[var(--ink)] px-6 py-6 text-white shadow-[0_24px_70px_rgba(43,33,24,0.14)] sm:px-8 sm:py-8">
-                            <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
-                                <div>
-                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-white/54">Release score</p>
-                                    <div class="mt-5 grid gap-4 sm:grid-cols-3">
-                                        <article class="rounded-[1.6rem] bg-white/8 p-4">
-                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/54">Current wave</p>
-                                            <p class="mt-3 text-3xl font-semibold">{{ $launchStage->label() }}</p>
-                                        </article>
-                                        <article class="rounded-[1.6rem] bg-white/8 p-4">
-                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/54">Exposure</p>
-                                            <p class="mt-3 text-3xl font-semibold">{{ $launchStage->exposure() }}</p>
-                                        </article>
-                                        <article class="rounded-[1.6rem] bg-white/8 p-4">
-                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/54">Primary watch</p>
-                                            <p class="mt-3 text-lg font-semibold">{{ $launchStage->monitorFocus() }}</p>
-                                        </article>
-                                    </div>
-
-                                    <div class="mt-8 grid gap-3">
-                                        @php
-                                            $timeline = [
-                                                ['label' => 'Steady', 'key' => 'steady', 'copy' => 'Small blast radius, safe operator feedback loop.'],
-                                                ['label' => 'Canary', 'key' => 'canary', 'copy' => 'Measured expansion once the surface proves itself.'],
-                                                ['label' => 'Wide', 'key' => 'wide', 'copy' => 'The showcase has earned broad availability.'],
-                                            ];
-                                        @endphp
-                                        @foreach ($timeline as $step)
-                                            <div @class([
-                                                'rounded-[1.5rem] border px-4 py-4 transition',
-                                                'border-white/30 bg-white/12' => $launchStage->value === $step['key'],
-                                                'border-white/10 bg-white/4' => $launchStage->value !== $step['key'],
-                                            ])>
-                                                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                                                    <div>
-                                                        <p class="text-sm font-semibold">{{ $step['label'] }}</p>
-                                                        <p class="mt-1 text-sm text-white/64">{{ $step['copy'] }}</p>
-                                                    </div>
-                                                    <span @class([
-                                                        'rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
-                                                        'bg-white text-[var(--ink)]' => $launchStage->value === $step['key'],
-                                                        'bg-white/10 text-white/64' => $launchStage->value !== $step['key'],
-                                                    ])>
-                                                        {{ $launchStage->value === $step['key'] ? 'Current' : 'Standby' }}
-                                                    </span>
-                                                </div>
-                                            </div>
-                                        @endforeach
-                                    </div>
-                                </div>
-
-                                <div class="rounded-[1.9rem] bg-white/8 p-5">
-                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-white/54">Pennant notes</p>
-                                    <div class="mt-5 space-y-4 text-sm leading-7 text-white/76">
-                                        <p>The selected audience is a serializable enum scope, so the demo stays deterministic and easy to verify.</p>
-                                        <p>The emergency brake is a class-based feature with a <span class="font-mono text-white">before()</span> interception hook, which lets us override stored values without wiping rollout history.</p>
-                                        <p>The launch stage is a rich-value global feature. Its enum value drives this whole band without changing any code paths.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <aside class="lg:sticky lg:top-6 lg:self-start">
-                        <section class="rounded-[2.3rem] border border-black/8 bg-white/82 p-5 shadow-[0_24px_70px_rgba(43,33,24,0.1)] backdrop-blur sm:p-6">
-                            <div class="flex items-start justify-between gap-4">
-                                <div>
-                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Control column</p>
-                                    <h2 class="mt-3 text-2xl font-semibold tracking-tight">Release actions</h2>
-                                </div>
-                                <div class="rounded-full bg-[var(--panel)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
-                                    Live
-                                </div>
-                            </div>
-
-                            <div class="mt-6 space-y-4">
-                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-[1.7rem] bg-[var(--panel)] p-4">
-                                    @csrf
-                                    <input type="hidden" name="feature" value="launch_mode">
-                                    <p class="text-sm font-semibold">Change the release wave</p>
-                                    <p class="mt-2 text-sm leading-7 text-[var(--muted)]">Update the rich-value global feature that drives the rollout posture.</p>
-                                    <div class="mt-4 grid gap-2">
-                                        @foreach (\App\Enums\LaunchStage::cases() as $stage)
-                                            <button
-                                                type="submit"
-                                                name="value"
-                                                value="{{ $stage->value }}"
-                                                @class([
-                                                    'flex items-center justify-between rounded-[1.15rem] border px-4 py-3 text-left text-sm transition',
-                                                    'border-[rgba(216,101,55,0.24)] bg-white text-[var(--ink)]' => $launchStage === $stage,
-                                                    'border-black/8 bg-transparent text-[var(--ink)] hover:bg-white/70' => $launchStage !== $stage,
-                                                ])
-                                            >
-                                                <span class="font-semibold">{{ $stage->label() }}</span>
-                                                <span class="text-[var(--muted)]">{{ $stage->exposure() }}</span>
-                                            </button>
-                                        @endforeach
-                                    </div>
-                                </form>
-
-                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-[1.7rem] bg-[var(--panel)] p-4">
-                                    @csrf
-                                    <input type="hidden" name="feature" value="operator_console">
-                                    <div class="flex items-start justify-between gap-4">
-                                        <div>
-                                            <p class="text-sm font-semibold">Operator layer</p>
-                                            <p class="mt-2 text-sm leading-7 text-[var(--muted)]">Reveals the deeper operational narrative on the page.</p>
-                                        </div>
-                                        <span class="rounded-full bg-white px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
-                                            {{ $operatorConsole ? 'On' : 'Off' }}
-                                        </span>
-                                    </div>
-                                    <div class="mt-4 grid grid-cols-2 gap-2">
-                                        <button type="submit" name="state" value="on" class="rounded-[1.1rem] bg-[var(--ink)] px-4 py-3 text-sm font-semibold text-white">Enable</button>
-                                        <button type="submit" name="state" value="off" class="rounded-[1.1rem] border border-black/8 bg-white px-4 py-3 text-sm font-semibold text-[var(--ink)]">Disable</button>
-                                    </div>
-                                </form>
-
-                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-[1.7rem] bg-[rgba(122,43,24,0.08)] p-4">
-                                    @csrf
-                                    <input type="hidden" name="feature" value="emergency_brake">
-                                    <div class="flex items-start justify-between gap-4">
-                                        <div>
-                                            <p class="text-sm font-semibold">Emergency brake</p>
-                                            <p class="mt-2 text-sm leading-7 text-[var(--muted)]">Forces a safer surface immediately through Pennant interception.</p>
-                                        </div>
-                                        <span @class([
-                                            'rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
-                                            'bg-[rgba(139,33,3,0.12)] text-[rgb(110,30,11)]' => $emergencyBrake,
-                                            'bg-white text-[var(--muted)]' => ! $emergencyBrake,
-                                        ])>
-                                            {{ $emergencyBrake ? 'Active' : 'Idle' }}
-                                        </span>
-                                    </div>
-                                    <div class="mt-4 grid grid-cols-2 gap-2">
-                                        <button type="submit" name="state" value="on" class="rounded-[1.1rem] bg-[rgb(110,30,11)] px-4 py-3 text-sm font-semibold text-white">Activate</button>
-                                        <button type="submit" name="state" value="off" class="rounded-[1.1rem] border border-black/8 bg-white px-4 py-3 text-sm font-semibold text-[var(--ink)]">Release</button>
-                                    </div>
-                                </form>
-                            </div>
-
-                            <div class="mt-6 rounded-[1.7rem] border border-dashed border-black/10 px-4 py-4">
-                                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Current readout</p>
-                                <div class="mt-4 grid gap-3">
-                                    <div class="flex items-center justify-between gap-3">
-                                        <span class="text-sm text-[var(--muted)]">Priority navigation</span>
-                                        <span class="text-sm font-semibold">{{ $priorityNavigation ? 'Enabled' : 'Disabled' }}</span>
-                                    </div>
-                                    <div class="flex items-center justify-between gap-3">
-                                        <span class="text-sm text-[var(--muted)]">Theme variant</span>
-                                        <span class="text-sm font-semibold">{{ $showcaseTheme->label() }}</span>
-                                    </div>
-                                    <div class="flex items-center justify-between gap-3">
-                                        <span class="text-sm text-[var(--muted)]">Wave size</span>
-                                        <span class="text-sm font-semibold">{{ $launchStage->exposure() }}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </aside>
-                </section>
-            </main>
+                </main>
+            </div>
         </div>
     </body>
 </html>

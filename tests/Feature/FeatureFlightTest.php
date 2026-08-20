@@ -22,7 +22,7 @@ class FeatureFlightTest extends TestCase
             ->assertOk()
             ->assertSee('Public Traffic')
             ->assertSee('Signal Layer')
-            ->assertSee('This audience is still watching the rollout from the safe side.');
+            ->assertSee('Priority navigation is held back.');
     }
 
     public function test_beta_audience_gets_the_scoped_experience(): void
@@ -33,7 +33,7 @@ class FeatureFlightTest extends TestCase
             ->assertOk()
             ->assertSee('Beta Circle')
             ->assertSee('Immersive Variant')
-            ->assertSee('This audience is already inside the new experience.');
+            ->assertSee('Priority navigation is live.');
     }
 
     public function test_emergency_brake_overrides_scoped_features_in_memory(): void
@@ -44,9 +44,9 @@ class FeatureFlightTest extends TestCase
 
         $response
             ->assertOk()
-            ->assertSee('Recovery Mode Active')
+            ->assertSee('Brake engaged')
             ->assertSee('Recovery Skin')
-            ->assertSee('This audience is still watching the rollout from the safe side.');
+            ->assertSee('Priority navigation is held back.');
     }
 
     public function test_launch_mode_can_be_updated_through_the_control_route(): void
