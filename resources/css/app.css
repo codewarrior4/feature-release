@@ -7,14 +7,24 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
     --font-mono: 'SF Mono', 'Monaco', 'Cascadia Mono', 'Roboto Mono', monospace;
+    --page: oklch(0.97 0.02 72);
+    --ink: oklch(0.26 0.03 42);
+    --muted: oklch(0.51 0.03 41);
+    --panel: oklch(0.94 0.024 61);
+    --accent-soft: oklch(0.9 0.05 44);
 }
 
 @layer base {
-    html {
-        color-scheme: dark;
-    }
-
     body {
         font-feature-settings: 'ss01' on, 'cv01' on;
+    }
+}
+
+@layer components {
+    .release-hero {
+        background:
+            radial-gradient(circle at 20% 12%, rgba(255, 188, 109, 0.24), transparent 28%),
+            linear-gradient(135deg, rgba(24, 36, 52, 0.96), rgba(33, 53, 78, 0.92) 52%, rgba(163, 74, 45, 0.85));
+        box-shadow: 0 28px 90px rgba(43, 33, 24, 0.18);
     }
 }

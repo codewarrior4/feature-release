@@ -8,261 +8,336 @@
 
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="min-h-screen bg-[radial-gradient(circle_at_top,_#1c4a64,_#071018_52%,_#02050a)] text-white">
+    <body class="bg-[var(--page)] text-[var(--ink)]">
         <div class="relative overflow-hidden">
-            <div class="absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_20%_10%,rgba(102,196,255,0.22),transparent_35%),radial-gradient(circle_at_80%_0%,rgba(255,142,82,0.18),transparent_32%)]"></div>
-            <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:3.5rem_3.5rem] [mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.6),transparent_92%)]"></div>
+            <div class="pointer-events-none absolute inset-x-0 top-0 h-[32rem] bg-[radial-gradient(circle_at_top_left,rgba(255,143,92,0.34),transparent_42%),radial-gradient(circle_at_85%_10%,rgba(38,110,255,0.18),transparent_30%)]"></div>
+            <div class="pointer-events-none absolute left-[-10rem] top-[20rem] h-[24rem] w-[24rem] rounded-full bg-[rgba(255,195,123,0.28)] blur-3xl"></div>
+            <div class="pointer-events-none absolute right-[-8rem] top-[38rem] h-[20rem] w-[20rem] rounded-full bg-[rgba(64,145,255,0.16)] blur-3xl"></div>
 
-            <main class="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-10 px-6 py-8 sm:px-8 lg:px-12">
-                <header class="flex flex-col gap-6 lg:flex-row lg:items-center lg:justify-between">
-                    <div class="max-w-2xl space-y-4">
-                        <p class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/6 px-4 py-1 text-xs font-medium uppercase tracking-[0.28em] text-cyan-100/80">
-                            <span class="h-2 w-2 rounded-full bg-emerald-300"></span>
-                            Feature Flight
-                        </p>
-                        <div class="space-y-3">
-                            <h1 class="max-w-3xl text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                                A Laravel Pennant showcase built like a launch console.
-                            </h1>
-                            <p class="max-w-2xl text-base leading-7 text-slate-200/80 sm:text-lg">
-                                Deployment is code shipping. Release is exposure control. This demo makes modern Pennant features visible through audience targeting, global controls, rich values, and an emergency brake.
-                            </p>
+            <main class="relative mx-auto flex min-h-screen w-full max-w-7xl flex-col gap-12 px-5 py-6 sm:px-8 lg:px-10 lg:py-8">
+                <header class="flex flex-col gap-5 rounded-[2rem] border border-black/8 bg-white/72 px-5 py-4 shadow-[0_20px_60px_rgba(43,33,24,0.08)] backdrop-blur sm:px-6 lg:flex-row lg:items-center lg:justify-between">
+                    <div class="flex flex-col gap-3">
+                        <div class="flex items-center gap-3">
+                            <span class="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--ink)] text-sm font-semibold tracking-[0.2em] text-white">
+                                FF
+                            </span>
+                            <div>
+                                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Feature Flight</p>
+                                <p class="text-sm text-[var(--muted)]">Laravel Pennant release choreography</p>
+                            </div>
                         </div>
+                        <p class="max-w-2xl text-sm leading-7 text-[var(--muted)]">
+                            A live showcase for audience-scoped flags, global release controls, rich values, and recovery behavior.
+                        </p>
                     </div>
 
-                    <div class="grid gap-3 sm:grid-cols-3 lg:w-[30rem]">
-                        <article class="rounded-3xl border border-white/10 bg-white/6 p-4 backdrop-blur">
-                            <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Audience</p>
+                    <div class="grid gap-3 sm:grid-cols-3 lg:min-w-[32rem]">
+                        <article class="rounded-[1.4rem] bg-[var(--panel)] px-4 py-4">
+                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Audience</p>
                             <p class="mt-3 text-lg font-semibold">{{ $audience->label() }}</p>
-                            <p class="mt-2 text-sm leading-6 text-slate-300/75">{{ $audience->description() }}</p>
+                            <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{{ $audience->description() }}</p>
                         </article>
-                        <article class="rounded-3xl border border-white/10 bg-white/6 p-4 backdrop-blur">
-                            <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Theme</p>
+                        <article class="rounded-[1.4rem] bg-[var(--panel)] px-4 py-4">
+                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Theme</p>
                             <p class="mt-3 text-lg font-semibold">{{ $showcaseTheme->label() }}</p>
-                            <p class="mt-2 text-sm leading-6 text-slate-300/75">{{ $showcaseTheme->description() }}</p>
+                            <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{{ $showcaseTheme->description() }}</p>
                         </article>
-                        <article class="rounded-3xl border border-white/10 bg-white/6 p-4 backdrop-blur">
-                            <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Launch</p>
+                        <article class="rounded-[1.4rem] bg-[var(--panel)] px-4 py-4">
+                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Release</p>
                             <p class="mt-3 text-lg font-semibold">{{ $launchStage->label() }}</p>
-                            <p class="mt-2 text-sm leading-6 text-slate-300/75">{{ $launchStage->description() }}</p>
+                            <p class="mt-2 text-sm leading-6 text-[var(--muted)]">{{ $launchStage->description() }}</p>
                         </article>
                     </div>
                 </header>
 
                 @if (session('status'))
-                    <div class="rounded-2xl border border-emerald-400/20 bg-emerald-500/10 px-4 py-3 text-sm text-emerald-100">
+                    <div class="rounded-[1.5rem] border border-[rgba(24,131,89,0.18)] bg-[rgba(240,255,247,0.94)] px-5 py-4 text-sm text-[var(--ink)] shadow-[0_15px_45px_rgba(32,94,67,0.08)]">
                         {{ session('status') }}
                     </div>
                 @endif
 
-                <section class="grid gap-8 lg:grid-cols-[1.25fr_0.75fr]">
-                    <div class="overflow-hidden rounded-[2rem] border border-white/10 bg-slate-950/55 shadow-2xl shadow-cyan-950/30 backdrop-blur">
-                        <div class="border-b border-white/10 px-6 py-5 sm:px-8">
-                            <div class="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
-                                <div class="space-y-2">
-                                    <p class="text-xs uppercase tracking-[0.28em] text-cyan-100/65">Live Surface</p>
-                                    <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
-                                        {{ $priorityNavigation ? 'Priority navigation is live for this audience.' : 'Priority navigation is still gated for this audience.' }}
-                                    </h2>
-                                    <p class="max-w-2xl text-sm leading-6 text-slate-300/75">
-                                        The current experience is being resolved with <span class="font-mono text-cyan-100">Feature::for($audience)->values(...)</span> while global controls are resolved through <span class="font-mono text-cyan-100">Feature::globally()</span>.
-                                    </p>
-                                </div>
-                                <div class="flex items-center gap-2">
+                <section class="grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_22rem]">
+                    <div class="space-y-8">
+                        <section class="grid gap-6 lg:grid-cols-[minmax(0,1.2fr)_minmax(17rem,0.8fr)]">
+                            <article class="release-hero rounded-[2.4rem] p-6 sm:p-8 lg:p-10">
+                                <div class="flex flex-wrap items-center gap-3">
+                                    <span class="rounded-full bg-white/18 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-white/92">
+                                        Deployment is not release
+                                    </span>
                                     <span @class([
-                                        'rounded-full px-3 py-1 text-xs font-medium uppercase tracking-[0.24em]',
-                                        'bg-emerald-400/15 text-emerald-200' => ! $emergencyBrake,
-                                        'bg-rose-400/15 text-rose-200' => $emergencyBrake,
+                                        'rounded-full px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em]',
+                                        'bg-[rgba(255,255,255,0.16)] text-white' => ! $emergencyBrake,
+                                        'bg-[rgba(54,12,8,0.28)] text-[rgba(255,236,231,1)]' => $emergencyBrake,
                                     ])>
-                                        {{ $emergencyBrake ? 'Emergency Brake' : 'Healthy Rollout' }}
+                                        {{ $emergencyBrake ? 'Recovery Mode Active' : 'Healthy Rollout' }}
                                     </span>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="grid gap-6 px-6 py-6 sm:px-8 lg:grid-cols-[1.1fr_0.9fr]">
-                            <div class="space-y-6">
-                                <div @class([
-                                    'rounded-[1.75rem] border p-6 transition duration-500',
-                                    'border-cyan-300/20 bg-cyan-400/10' => $showcaseTheme->value === 'signal',
-                                    'border-fuchsia-300/20 bg-fuchsia-400/10' => $showcaseTheme->value === 'immersive',
-                                    'border-amber-300/20 bg-amber-400/10' => $showcaseTheme->value === 'control',
-                                    'border-rose-300/20 bg-rose-400/10' => $showcaseTheme->value === 'recovery',
-                                ])>
-                                    <p class="text-sm uppercase tracking-[0.24em] text-white/60">Resolved Experience</p>
-                                    <h3 class="mt-4 text-3xl font-semibold tracking-tight">{{ $showcaseTheme->label() }}</h3>
-                                    <p class="mt-3 max-w-xl text-sm leading-7 text-slate-100/80">
-                                        {{ $showcaseTheme->description() }}
-                                    </p>
-
-                                    <div class="mt-8 grid gap-3 sm:grid-cols-2">
-                                        <article class="rounded-2xl border border-white/10 bg-black/20 p-4">
-                                            <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Scoped flag</p>
-                                            <p class="mt-3 text-lg font-semibold">
-                                                {{ $priorityNavigation ? 'Enabled' : 'Disabled' }}
-                                            </p>
-                                            <p class="mt-2 text-sm text-slate-300/70">`PriorityNavigation` changes per audience and can be intercepted in-memory.</p>
-                                        </article>
-                                        <article class="rounded-2xl border border-white/10 bg-black/20 p-4">
-                                            <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Global stage</p>
-                                            <p class="mt-3 text-lg font-semibold">{{ $launchStage->label() }}</p>
-                                            <p class="mt-2 text-sm text-slate-300/70">`LaunchMode` is a rich-value feature stored globally with enum support.</p>
-                                        </article>
+                                <div class="mt-8 grid gap-8 lg:grid-cols-[minmax(0,1fr)_14rem]">
+                                    <div class="space-y-6">
+                                        <h1 class="max-w-3xl text-4xl font-semibold leading-[1.02] tracking-tight text-white sm:text-5xl lg:text-[4.5rem]">
+                                            {{ $priorityNavigation ? 'This audience is already inside the new experience.' : 'This audience is still watching the rollout from the safe side.' }}
+                                        </h1>
+                                        <p class="max-w-2xl text-base leading-8 text-white/82 sm:text-lg">
+                                            Pennant is resolving the experience in real time. Scoped flags shape the surface for the selected audience, while global controls can widen the release, reveal the operator layer, or trigger a recovery override instantly.
+                                        </p>
                                     </div>
-                                </div>
 
-                                <div class="grid gap-4 md:grid-cols-3">
-                                    <article class="rounded-2xl border border-white/10 bg-white/6 p-4">
-                                        <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Exposure</p>
-                                        <p class="mt-3 text-2xl font-semibold">{{ $launchStage->exposure() }}</p>
-                                        <p class="mt-2 text-sm text-slate-300/70">Illustrative audience coverage for the current release wave.</p>
-                                    </article>
-                                    <article class="rounded-2xl border border-white/10 bg-white/6 p-4">
-                                        <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Monitor focus</p>
-                                        <p class="mt-3 text-lg font-semibold">{{ $launchStage->monitorFocus() }}</p>
-                                        <p class="mt-2 text-sm text-slate-300/70">What the operator team should care about right now.</p>
-                                    </article>
-                                    <article class="rounded-2xl border border-white/10 bg-white/6 p-4">
-                                        <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Persistence</p>
-                                        <p class="mt-3 text-lg font-semibold">Database store</p>
-                                        <p class="mt-2 text-sm text-slate-300/70">Global toggles survive refreshes because Pennant is backed by the features table.</p>
-                                    </article>
-                                </div>
-
-                                <div class="grid gap-4 sm:grid-cols-3">
-                                    @foreach ($audiences as $candidate)
-                                        <a
-                                            href="{{ route('showcase', ['audience' => $candidate->value]) }}"
-                                            @class([
-                                                'rounded-2xl border px-4 py-4 transition',
-                                                'border-white/10 bg-white/6 hover:bg-white/10' => $candidate !== $audience,
-                                                'border-cyan-300/35 bg-cyan-400/12 shadow-lg shadow-cyan-950/40' => $candidate === $audience,
-                                            ])
-                                        >
-                                            <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Audience</p>
-                                            <p class="mt-3 text-base font-semibold">{{ $candidate->label() }}</p>
-                                            <p class="mt-2 text-sm leading-6 text-slate-300/70">{{ $candidate->description() }}</p>
-                                        </a>
-                                    @endforeach
-                                </div>
-                            </div>
-
-                            <div class="space-y-4">
-                                <article class="rounded-[1.75rem] border border-white/10 bg-white/6 p-5">
-                                    <p class="text-xs uppercase tracking-[0.24em] text-slate-300/70">Pennant notes</p>
-                                    <div class="mt-4 space-y-3 text-sm leading-7 text-slate-200/80">
-                                        <p>Scoped features are keyed against the selected audience enum, so the demo stays deterministic and easy to reason about.</p>
-                                        <p>The emergency brake uses a class-based feature <span class="font-mono text-cyan-100">before()</span> method to override stored values without erasing rollout history.</p>
-                                        <p>Global toggles persist through Pennant’s database store, which makes the console feel like real release infrastructure.</p>
-                                    </div>
-                                </article>
-
-                                <article class="rounded-[1.75rem] border border-white/10 bg-white/6 p-5">
-                                    <p class="text-xs uppercase tracking-[0.24em] text-slate-300/70">Operator console</p>
-                                    <div class="mt-4 grid gap-3">
-                                        <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
-                                            <div class="flex items-center justify-between gap-4">
-                                                <div>
-                                                    <p class="text-sm font-semibold">Global overlay</p>
-                                                    <p class="mt-1 text-sm text-slate-300/70">Reveals extra operational copy in the hero and metrics rail.</p>
-                                                </div>
-                                                <span class="rounded-full bg-white/10 px-3 py-1 text-xs uppercase tracking-[0.22em] text-slate-100">
-                                                    {{ $operatorConsole ? 'On' : 'Off' }}
-                                                </span>
+                                    <div class="flex flex-col justify-between rounded-[1.8rem] bg-[rgba(255,255,255,0.11)] p-5 text-white/94 backdrop-blur">
+                                        <div>
+                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/66">Wave size</p>
+                                            <p class="mt-4 text-5xl font-semibold">{{ $launchStage->exposure() }}</p>
+                                        </div>
+                                        <div class="space-y-3">
+                                            <div>
+                                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/66">Watch closely</p>
+                                                <p class="mt-2 text-base font-medium">{{ $launchStage->monitorFocus() }}</p>
+                                            </div>
+                                            <div>
+                                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/66">Storage</p>
+                                                <p class="mt-2 text-base font-medium">Pennant database store</p>
                                             </div>
                                         </div>
-
-                                        @if ($operatorConsole)
-                                            <div class="rounded-2xl border border-cyan-300/20 bg-cyan-400/10 p-4 text-sm leading-7 text-cyan-50/90">
-                                                Operator overlay is active. This is the kind of global, cross-cutting flag that works cleanly with <span class="font-mono">Feature::globally()</span> in Pennant v1.25+.
-                                            </div>
-                                            <div class="grid gap-3 sm:grid-cols-2">
-                                                <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
-                                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Current exposure</p>
-                                                    <p class="mt-3 text-xl font-semibold">{{ $launchStage->exposure() }}</p>
-                                                </div>
-                                                <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
-                                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Watch closely</p>
-                                                    <p class="mt-3 text-base font-semibold">{{ $launchStage->monitorFocus() }}</p>
-                                                </div>
-                                            </div>
-                                        @endif
                                     </div>
-                                </article>
+                                </div>
+                            </article>
+
+                            <article class="rounded-[2rem] border border-black/8 bg-white/80 p-6 shadow-[0_20px_60px_rgba(43,33,24,0.08)]">
+                                <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Resolved surface</p>
+                                <div class="mt-5 space-y-5">
+                                    <div class="rounded-[1.6rem] bg-[var(--panel)] p-5">
+                                        <p class="text-sm font-medium text-[var(--muted)]">Visual mode</p>
+                                        <h2 class="mt-3 text-2xl font-semibold">{{ $showcaseTheme->label() }}</h2>
+                                        <p class="mt-3 text-sm leading-7 text-[var(--muted)]">{{ $showcaseTheme->description() }}</p>
+                                    </div>
+                                    <div class="grid gap-3">
+                                        <div class="rounded-[1.4rem] border border-black/8 bg-white px-4 py-4">
+                                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Scoped feature</p>
+                                            <p class="mt-2 text-lg font-semibold">{{ $priorityNavigation ? 'Priority navigation on' : 'Priority navigation off' }}</p>
+                                        </div>
+                                        <div class="rounded-[1.4rem] border border-black/8 bg-white px-4 py-4">
+                                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Operator layer</p>
+                                            <p class="mt-2 text-lg font-semibold">{{ $operatorConsole ? 'Visible' : 'Hidden' }}</p>
+                                        </div>
+                                        <div class="rounded-[1.4rem] border border-black/8 bg-white px-4 py-4">
+                                            <p class="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">Recovery path</p>
+                                            <p class="mt-2 text-lg font-semibold">{{ $emergencyBrake ? 'Intercepting in memory' : 'Standing by' }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </article>
+                        </section>
+
+                        <section class="rounded-[2.2rem] border border-black/8 bg-white/78 p-6 shadow-[0_20px_60px_rgba(43,33,24,0.08)] sm:p-8">
+                            <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+                                <div>
+                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Audience tracks</p>
+                                    <h2 class="mt-3 text-3xl font-semibold tracking-tight">Swap the viewer and watch the release posture change.</h2>
+                                </div>
+                                <p class="max-w-xl text-sm leading-7 text-[var(--muted)]">
+                                    The selected audience acts as the Pennant scope. Each card below resolves the same feature set through a different release lens.
+                                </p>
                             </div>
-                        </div>
+
+                            <div class="mt-8 grid gap-4 lg:grid-cols-3">
+                                @foreach ($audiences as $candidate)
+                                    <a
+                                        href="{{ route('showcase', ['audience' => $candidate->value]) }}"
+                                        @class([
+                                            'group rounded-[1.9rem] border p-5 transition duration-300',
+                                            'border-black/8 bg-[var(--panel)] hover:-translate-y-1 hover:shadow-[0_24px_55px_rgba(43,33,24,0.08)]' => $candidate !== $audience,
+                                            'border-[rgba(216,101,55,0.28)] bg-[var(--accent-soft)] shadow-[0_24px_55px_rgba(191,98,59,0.14)]' => $candidate === $audience,
+                                        ])
+                                    >
+                                        <div class="flex items-center justify-between gap-4">
+                                            <p class="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-[var(--muted)]">Track</p>
+                                            <span @class([
+                                                'rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
+                                                'bg-black/6 text-[var(--muted)]' => $candidate !== $audience,
+                                                'bg-[var(--ink)] text-white' => $candidate === $audience,
+                                            ])>
+                                                {{ $candidate === $audience ? 'Active' : 'Preview' }}
+                                            </span>
+                                        </div>
+                                        <h3 class="mt-6 text-2xl font-semibold tracking-tight">{{ $candidate->label() }}</h3>
+                                        <p class="mt-3 text-sm leading-7 text-[var(--muted)]">{{ $candidate->description() }}</p>
+                                        <div class="mt-8 flex items-end justify-between gap-4">
+                                            <div>
+                                                <p class="text-[0.68rem] uppercase tracking-[0.28em] text-[var(--muted)]">Expected surface</p>
+                                                <p class="mt-2 text-lg font-semibold">
+                                                    @if ($candidate->value === 'public')
+                                                        Conservative
+                                                    @elseif ($candidate->value === 'beta')
+                                                        Experimental
+                                                    @else
+                                                        Full access
+                                                    @endif
+                                                </p>
+                                            </div>
+                                            <span class="text-2xl transition group-hover:translate-x-1">&rarr;</span>
+                                        </div>
+                                    </a>
+                                @endforeach
+                            </div>
+                        </section>
+
+                        <section class="rounded-[2.2rem] border border-black/8 bg-[var(--ink)] px-6 py-6 text-white shadow-[0_24px_70px_rgba(43,33,24,0.14)] sm:px-8 sm:py-8">
+                            <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_20rem]">
+                                <div>
+                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-white/54">Release score</p>
+                                    <div class="mt-5 grid gap-4 sm:grid-cols-3">
+                                        <article class="rounded-[1.6rem] bg-white/8 p-4">
+                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/54">Current wave</p>
+                                            <p class="mt-3 text-3xl font-semibold">{{ $launchStage->label() }}</p>
+                                        </article>
+                                        <article class="rounded-[1.6rem] bg-white/8 p-4">
+                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/54">Exposure</p>
+                                            <p class="mt-3 text-3xl font-semibold">{{ $launchStage->exposure() }}</p>
+                                        </article>
+                                        <article class="rounded-[1.6rem] bg-white/8 p-4">
+                                            <p class="text-[0.68rem] uppercase tracking-[0.28em] text-white/54">Primary watch</p>
+                                            <p class="mt-3 text-lg font-semibold">{{ $launchStage->monitorFocus() }}</p>
+                                        </article>
+                                    </div>
+
+                                    <div class="mt-8 grid gap-3">
+                                        @php
+                                            $timeline = [
+                                                ['label' => 'Steady', 'key' => 'steady', 'copy' => 'Small blast radius, safe operator feedback loop.'],
+                                                ['label' => 'Canary', 'key' => 'canary', 'copy' => 'Measured expansion once the surface proves itself.'],
+                                                ['label' => 'Wide', 'key' => 'wide', 'copy' => 'The showcase has earned broad availability.'],
+                                            ];
+                                        @endphp
+                                        @foreach ($timeline as $step)
+                                            <div @class([
+                                                'rounded-[1.5rem] border px-4 py-4 transition',
+                                                'border-white/30 bg-white/12' => $launchStage->value === $step['key'],
+                                                'border-white/10 bg-white/4' => $launchStage->value !== $step['key'],
+                                            ])>
+                                                <div class="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                                                    <div>
+                                                        <p class="text-sm font-semibold">{{ $step['label'] }}</p>
+                                                        <p class="mt-1 text-sm text-white/64">{{ $step['copy'] }}</p>
+                                                    </div>
+                                                    <span @class([
+                                                        'rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
+                                                        'bg-white text-[var(--ink)]' => $launchStage->value === $step['key'],
+                                                        'bg-white/10 text-white/64' => $launchStage->value !== $step['key'],
+                                                    ])>
+                                                        {{ $launchStage->value === $step['key'] ? 'Current' : 'Standby' }}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+
+                                <div class="rounded-[1.9rem] bg-white/8 p-5">
+                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-white/54">Pennant notes</p>
+                                    <div class="mt-5 space-y-4 text-sm leading-7 text-white/76">
+                                        <p>The selected audience is a serializable enum scope, so the demo stays deterministic and easy to verify.</p>
+                                        <p>The emergency brake is a class-based feature with a <span class="font-mono text-white">before()</span> interception hook, which lets us override stored values without wiping rollout history.</p>
+                                        <p>The launch stage is a rich-value global feature. Its enum value drives this whole band without changing any code paths.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
                     </div>
 
-                    <aside class="space-y-5">
-                        <section class="rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 backdrop-blur">
-                            <p class="text-xs uppercase tracking-[0.28em] text-cyan-100/65">Flight Controls</p>
-                            <h2 class="mt-3 text-2xl font-semibold tracking-tight">Global release controls</h2>
-                            <p class="mt-3 text-sm leading-7 text-slate-300/75">
-                                These controls write directly to Pennant’s global scope so the page state changes without new code deployment.
-                            </p>
+                    <aside class="lg:sticky lg:top-6 lg:self-start">
+                        <section class="rounded-[2.3rem] border border-black/8 bg-white/82 p-5 shadow-[0_24px_70px_rgba(43,33,24,0.1)] backdrop-blur sm:p-6">
+                            <div class="flex items-start justify-between gap-4">
+                                <div>
+                                    <p class="text-[0.7rem] font-semibold uppercase tracking-[0.34em] text-[var(--muted)]">Control column</p>
+                                    <h2 class="mt-3 text-2xl font-semibold tracking-tight">Release actions</h2>
+                                </div>
+                                <div class="rounded-full bg-[var(--panel)] px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
+                                    Live
+                                </div>
+                            </div>
 
                             <div class="mt-6 space-y-4">
-                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-[1.7rem] bg-[var(--panel)] p-4">
                                     @csrf
                                     <input type="hidden" name="feature" value="launch_mode">
-                                    <p class="text-sm font-semibold">Launch mode</p>
-                                    <p class="mt-1 text-sm text-slate-300/70">Choose how aggressively the demo feels released.</p>
-                                    <div class="mt-4 grid gap-2 sm:grid-cols-3">
+                                    <p class="text-sm font-semibold">Change the release wave</p>
+                                    <p class="mt-2 text-sm leading-7 text-[var(--muted)]">Update the rich-value global feature that drives the rollout posture.</p>
+                                    <div class="mt-4 grid gap-2">
                                         @foreach (\App\Enums\LaunchStage::cases() as $stage)
                                             <button
                                                 type="submit"
                                                 name="value"
                                                 value="{{ $stage->value }}"
                                                 @class([
-                                                    'rounded-xl border px-3 py-3 text-sm font-medium transition',
-                                                    'border-cyan-300/35 bg-cyan-400/15 text-white' => $launchStage === $stage,
-                                                    'border-white/10 bg-black/20 text-slate-200 hover:bg-white/10' => $launchStage !== $stage,
+                                                    'flex items-center justify-between rounded-[1.15rem] border px-4 py-3 text-left text-sm transition',
+                                                    'border-[rgba(216,101,55,0.24)] bg-white text-[var(--ink)]' => $launchStage === $stage,
+                                                    'border-black/8 bg-transparent text-[var(--ink)] hover:bg-white/70' => $launchStage !== $stage,
                                                 ])
                                             >
-                                                {{ $stage->label() }}
+                                                <span class="font-semibold">{{ $stage->label() }}</span>
+                                                <span class="text-[var(--muted)]">{{ $stage->exposure() }}</span>
                                             </button>
                                         @endforeach
                                     </div>
                                 </form>
 
-                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-[1.7rem] bg-[var(--panel)] p-4">
                                     @csrf
                                     <input type="hidden" name="feature" value="operator_console">
-                                    <p class="text-sm font-semibold">Operator console</p>
-                                    <div class="mt-4 flex gap-2">
-                                        <button type="submit" name="state" value="on" class="rounded-xl border border-white/10 bg-emerald-400/15 px-4 py-2 text-sm font-medium text-emerald-100">Enable</button>
-                                        <button type="submit" name="state" value="off" class="rounded-xl border border-white/10 bg-black/20 px-4 py-2 text-sm font-medium text-slate-200">Disable</button>
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold">Operator layer</p>
+                                            <p class="mt-2 text-sm leading-7 text-[var(--muted)]">Reveals the deeper operational narrative on the page.</p>
+                                        </div>
+                                        <span class="rounded-full bg-white px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[var(--muted)]">
+                                            {{ $operatorConsole ? 'On' : 'Off' }}
+                                        </span>
+                                    </div>
+                                    <div class="mt-4 grid grid-cols-2 gap-2">
+                                        <button type="submit" name="state" value="on" class="rounded-[1.1rem] bg-[var(--ink)] px-4 py-3 text-sm font-semibold text-white">Enable</button>
+                                        <button type="submit" name="state" value="off" class="rounded-[1.1rem] border border-black/8 bg-white px-4 py-3 text-sm font-semibold text-[var(--ink)]">Disable</button>
                                     </div>
                                 </form>
 
-                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                                <form method="POST" action="{{ route('controls.update') }}" class="rounded-[1.7rem] bg-[rgba(122,43,24,0.08)] p-4">
                                     @csrf
                                     <input type="hidden" name="feature" value="emergency_brake">
-                                    <p class="text-sm font-semibold">Emergency brake</p>
-                                    <p class="mt-1 text-sm text-slate-300/70">Intercepts the scoped features in-memory without removing their stored values.</p>
-                                    <div class="mt-4 flex gap-2">
-                                        <button type="submit" name="state" value="on" class="rounded-xl border border-rose-300/20 bg-rose-400/15 px-4 py-2 text-sm font-medium text-rose-100">Activate</button>
-                                        <button type="submit" name="state" value="off" class="rounded-xl border border-white/10 bg-black/20 px-4 py-2 text-sm font-medium text-slate-200">Release</button>
+                                    <div class="flex items-start justify-between gap-4">
+                                        <div>
+                                            <p class="text-sm font-semibold">Emergency brake</p>
+                                            <p class="mt-2 text-sm leading-7 text-[var(--muted)]">Forces a safer surface immediately through Pennant interception.</p>
+                                        </div>
+                                        <span @class([
+                                            'rounded-full px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.28em]',
+                                            'bg-[rgba(139,33,3,0.12)] text-[rgb(110,30,11)]' => $emergencyBrake,
+                                            'bg-white text-[var(--muted)]' => ! $emergencyBrake,
+                                        ])>
+                                            {{ $emergencyBrake ? 'Active' : 'Idle' }}
+                                        </span>
+                                    </div>
+                                    <div class="mt-4 grid grid-cols-2 gap-2">
+                                        <button type="submit" name="state" value="on" class="rounded-[1.1rem] bg-[rgb(110,30,11)] px-4 py-3 text-sm font-semibold text-white">Activate</button>
+                                        <button type="submit" name="state" value="off" class="rounded-[1.1rem] border border-black/8 bg-white px-4 py-3 text-sm font-semibold text-[var(--ink)]">Release</button>
                                     </div>
                                 </form>
                             </div>
-                        </section>
 
-                        <section class="rounded-[2rem] border border-white/10 bg-slate-950/60 p-6 backdrop-blur">
-                            <p class="text-xs uppercase tracking-[0.28em] text-cyan-100/65">Resolved State</p>
-                            <div class="mt-5 grid gap-3">
-                                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Priority navigation</p>
-                                    <p class="mt-2 text-lg font-semibold">{{ $priorityNavigation ? 'Enabled' : 'Disabled' }}</p>
-                                </article>
-                                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Launch mode</p>
-                                    <p class="mt-2 text-lg font-semibold">{{ $launchStage->label() }}</p>
-                                </article>
-                                <article class="rounded-2xl border border-white/10 bg-white/5 p-4">
-                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Emergency brake</p>
-                                    <p class="mt-2 text-lg font-semibold">{{ $emergencyBrake ? 'Active' : 'Idle' }}</p>
-                                </article>
+                            <div class="mt-6 rounded-[1.7rem] border border-dashed border-black/10 px-4 py-4">
+                                <p class="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[var(--muted)]">Current readout</p>
+                                <div class="mt-4 grid gap-3">
+                                    <div class="flex items-center justify-between gap-3">
+                                        <span class="text-sm text-[var(--muted)]">Priority navigation</span>
+                                        <span class="text-sm font-semibold">{{ $priorityNavigation ? 'Enabled' : 'Disabled' }}</span>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-3">
+                                        <span class="text-sm text-[var(--muted)]">Theme variant</span>
+                                        <span class="text-sm font-semibold">{{ $showcaseTheme->label() }}</span>
+                                    </div>
+                                    <div class="flex items-center justify-between gap-3">
+                                        <span class="text-sm text-[var(--muted)]">Wave size</span>
+                                        <span class="text-sm font-semibold">{{ $launchStage->exposure() }}</span>
+                                    </div>
+                                </div>
                             </div>
                         </section>
                     </aside>
