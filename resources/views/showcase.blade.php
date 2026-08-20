@@ -111,6 +111,24 @@
                                     </div>
                                 </div>
 
+                                <div class="grid gap-4 md:grid-cols-3">
+                                    <article class="rounded-2xl border border-white/10 bg-white/6 p-4">
+                                        <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Exposure</p>
+                                        <p class="mt-3 text-2xl font-semibold">{{ $launchStage->exposure() }}</p>
+                                        <p class="mt-2 text-sm text-slate-300/70">Illustrative audience coverage for the current release wave.</p>
+                                    </article>
+                                    <article class="rounded-2xl border border-white/10 bg-white/6 p-4">
+                                        <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Monitor focus</p>
+                                        <p class="mt-3 text-lg font-semibold">{{ $launchStage->monitorFocus() }}</p>
+                                        <p class="mt-2 text-sm text-slate-300/70">What the operator team should care about right now.</p>
+                                    </article>
+                                    <article class="rounded-2xl border border-white/10 bg-white/6 p-4">
+                                        <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Persistence</p>
+                                        <p class="mt-3 text-lg font-semibold">Database store</p>
+                                        <p class="mt-2 text-sm text-slate-300/70">Global toggles survive refreshes because Pennant is backed by the features table.</p>
+                                    </article>
+                                </div>
+
                                 <div class="grid gap-4 sm:grid-cols-3">
                                     @foreach ($audiences as $candidate)
                                         <a
@@ -157,6 +175,16 @@
                                         @if ($operatorConsole)
                                             <div class="rounded-2xl border border-cyan-300/20 bg-cyan-400/10 p-4 text-sm leading-7 text-cyan-50/90">
                                                 Operator overlay is active. This is the kind of global, cross-cutting flag that works cleanly with <span class="font-mono">Feature::globally()</span> in Pennant v1.25+.
+                                            </div>
+                                            <div class="grid gap-3 sm:grid-cols-2">
+                                                <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+                                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Current exposure</p>
+                                                    <p class="mt-3 text-xl font-semibold">{{ $launchStage->exposure() }}</p>
+                                                </div>
+                                                <div class="rounded-2xl border border-white/10 bg-black/20 p-4">
+                                                    <p class="text-xs uppercase tracking-[0.22em] text-slate-300/70">Watch closely</p>
+                                                    <p class="mt-3 text-base font-semibold">{{ $launchStage->monitorFocus() }}</p>
+                                                </div>
                                             </div>
                                         @endif
                                     </div>
