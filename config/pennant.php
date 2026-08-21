@@ -15,7 +15,11 @@ return [
     |
     */
 
-    'default' => env('PENNANT_STORE', 'database'),
+    'default' => env('PENNANT_STORE', 'instrumented'),
+
+    'rollouts' => [
+        'telemetry_preview' => 5,
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -36,6 +40,12 @@ return [
 
         'database' => [
             'driver' => 'database',
+            'connection' => null,
+            'table' => 'features',
+        ],
+
+        'instrumented' => [
+            'driver' => 'instrumented',
             'connection' => null,
             'table' => 'features',
         ],
