@@ -50,5 +50,10 @@ return [
             'table' => 'features',
         ],
 
+        'redis' => [
+            'driver' => 'redis',
+            'store' => 'redis',
+        ],
+
     ],
 ];

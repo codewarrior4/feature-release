@@ -1,3 +1,32 @@
+# Pennant Launch Observatory
+
+This Laravel 13 application is a working release-control lab built around the current Laravel Pennant APIs. It demonstrates serializable enum scopes, global rich-value flags, `before()` recovery overrides, deterministic percentage rollout, organization targeting, an instrumented database driver, and feature-resolution telemetry.
+
+## Run it
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan migrate
+npm install
+npm run build
+php artisan serve
+```
+
+Open `/` to use the Launch Observatory. The operator deck changes the release wave, operator layer, and emergency brake. The targeting lab evaluates a visitor identifier and organization scope without changing application code.
+
+## Engineering Notes
+
+- Architecture: [`docs/architecture.md`](docs/architecture.md)
+- Rollout strategy: [`docs/rollout-strategy.md`](docs/rollout-strategy.md)
+- Incident response: [`docs/incident-response.md`](docs/incident-response.md)
+- Security: [`docs/security.md`](docs/security.md)
+- Production checklist: [`docs/production-checklist.md`](docs/production-checklist.md)
+- Content drafts: [`content/`](content/)
+
+Run the verification suite with `php artisan test --compact` and format PHP with `vendor/bin/pint --dirty --format agent`.
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">

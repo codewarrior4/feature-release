@@ -18,6 +18,16 @@ class InstrumentedDatabaseDriver extends DatabaseDriver
     }
 
     /**
+     * Count bulk storage reads used by Pennant's values and all methods.
+     */
+    public function getAll($features): array
+    {
+        $this->increment('reads');
+
+        return parent::getAll($features);
+    }
+
+    /**
      * Count stored updates without changing Pennant's database behavior.
      */
     public function set($feature, $scope, $value): void

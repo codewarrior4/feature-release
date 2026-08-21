@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Pennant\Drivers\InstrumentedDatabaseDriver;
+use App\Pennant\Drivers\RedisDriver;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Schema;
@@ -36,6 +37,10 @@ class AppServiceProvider extends ServiceProvider
                 [],
             );
         });
+
+        Feature::extend('redis', fn ($app, array $config): RedisDriver => new RedisDriver(
+            $app['cache']->store($config['store'] ?? 'redis'),
+        ));
 
         Feature::discover();
 

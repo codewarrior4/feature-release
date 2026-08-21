@@ -38,4 +38,18 @@ class FeatureObservabilityTest extends TestCase
     {
         $this->assertSame('acme', Feature::serializeScope(DemoOrganization::Acme));
     }
+
+    public function test_instrumented_database_store_can_resolve_features(): void
+    {
+        config(['pennant.default' => 'instrumented']);
+        Feature::forgetDrivers();
+
+        try {
+            $this->get('/')->assertOk();
+            $this->assertGreaterThan(0, cache()->get('pennant:driver:reads', 0));
+        } finally {
+            config(['pennant.default' => 'array']);
+            Feature::forgetDrivers();
+        }
+    }
 }

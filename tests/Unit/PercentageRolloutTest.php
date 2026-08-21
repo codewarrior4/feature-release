@@ -2,8 +2,11 @@
 
 namespace Tests\Unit;
 
+use App\Pennant\Drivers\RedisDriver;
 use App\Support\PercentageRollout;
-use PHPUnit\Framework\TestCase;
+use Illuminate\Cache\ArrayStore;
+use Illuminate\Cache\Repository;
+use Tests\TestCase;
 
 class PercentageRolloutTest extends TestCase
 {
@@ -17,5 +20,14 @@ class PercentageRolloutTest extends TestCase
             $rollout->includes('feature', 'visitor', 5),
             $rollout->includes('feature', 'visitor', 5),
         );
+    }
+
+    public function test_cache_driver_persists_and_retrieves_scoped_values(): void
+    {
+        $driver = new RedisDriver(new Repository(new ArrayStore));
+        $driver->define('preview', fn (string $scope): bool => $scope === 'beta');
+
+        $this->assertTrue($driver->get('preview', 'beta'));
+        $this->assertFalse($driver->get('preview', 'public'));
     }
 }
